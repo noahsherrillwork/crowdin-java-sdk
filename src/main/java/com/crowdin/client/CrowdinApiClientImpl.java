@@ -15,43 +15,43 @@ import com.sun.jersey.api.client.ClientResponse;
  * @author ihor <ihor.popyk@crowdin.com>
  */
 public class CrowdinApiClientImpl implements CrowdinApiClient{
-  
+
   public static final String REQUEST_TYPE_GET= "get";
-  
+
   public static final String REQUEST_TYPE_POST= "post";
-  
+
   public static final String REQUEST_TYPE_POST_UPLOAD= "upload";
-  
+
   public static final String REQUEST_TYPE_POST_DOWNLOAD= "download";
-  
+
   public static final String CROWDIN_API_ACCOUNT_PROJECTS_URL = "account/get-projects?account-key=%(account-key)";
-  
+
   public static final String CROWDIN_API_ADD_DIRECTORY_URL = "project/%(project-identifier)/add-directory?key=%(project-key)";
-  
+
   public static final String CROWDIN_API_ADD_FILE_URL = "project/%(project-identifier)/add-file?key=%(project-key)";
-  
+
   public static final String CROWDIN_API_CHANGE_DIRECTORY_URL = "project/%(project-identifier)/change-directory?key=%(project-key)";
-  
+
   public static final String CROWDIN_API_CREATE_PROJECT_URL = "account/create-project?account-key=%(account-key)";
-  
+
   public static final String CROWDIN_API_DELETE_DIRECTORY_URL = "project/%(project-identifier)/delete-directory?key=%(project-key)";
-  
+
   public static final String CROWDIN_API_DELETE_FILE_URL = "project/%(project-identifier)/delete-file?key=%(project-key)";
-  
+
   public static final String CROWDIN_API_DELETE_PROJECT_URL = "project/%(project-identifier)/delete-project?key=%(project-key)";
-  
+
   public static final String CROWDIN_API_DOWNLOAD_GLOSSARY_URL = "project/%(project-identifier)/download-glossary?key=%(project-key)";
-  
+
   public static final String CROWDIN_API_DOWNLOAD_TM_URL = "project/%(project-identifier)/download-tm?key=%(project-key)";
-  
+
   public static final String CROWDIN_API_DOWNLOAD_TRANSLATIONS_URL = "project/%(project-identifier)/download/%(download-package).zip?key=%(project-key)";
-  
+
   public static final String CROWDIN_API_EDIT_PROJECT_URL = "project/%(project-identifier)/edit-project?key=%(project-key)";
-  
+
   public static final String CROWDIN_API_EXPORT_FILE_URL = "project/%(project-identifier)/export-file?key=%(project-key)";
-  
+
   public static final String CROWDIN_API_EXPORT_TRANSLATIONS_URL = "project/%(project-identifier)/export/%(export-language)?key=%(project-key)";
-  
+
   public static final String CROWDIN_API_LANGUAGE_STATUS_URL = "project/%(project-identifier)/language-status?key=%(project-key)";
 
   public static final String CROWDIN_API_PRE_TRANSLATE_URL = "project/%(project-identifier)/pre-translate?key=%(project-key)";
@@ -63,15 +63,15 @@ public class CrowdinApiClientImpl implements CrowdinApiClient{
   public static final String CROWDIN_API_PSEUDO_EXPORT_URL = "project/%(project-identifier)/pseudo-export?key=%(project-key)";
 
   public static final String CROWDIN_API_SUPPORTED_LANGUAGES_URL = "project/%(project-identifier)/supported-languages?key=%(project-key)";
-  
+
   public static final String CROWDIN_API_TRANSLATION_STATUS_URL = "project/%(project-identifier)/status?key=%(project-key)";
-  
+
   public static final String CROWDIN_API_UPLOAD_TRANSLATION_URL = "project/%(project-identifier)/upload-translation?key=%(project-key)";
-  
+
   public static final String CROWDIN_API_UPDATE_FILE_URL = "project/%(project-identifier)/update-file?key=%(project-key)";
-  
+
   public static final String CROWDIN_API_UPLOAD_GLOSSARY_URL = "project/%(project-identifier)/upload-glosssary?key=%(project-key)";
-  
+
   public static final String CROWDIN_API_UPLOAD_TM_URL = "project/%(project-identifier)/upload-tm?key=%(project-key)";
 
   @Override
@@ -95,7 +95,7 @@ public class CrowdinApiClientImpl implements CrowdinApiClient{
     }
     return response;
   }
-  
+
   @Override
   public ClientResponse changeDirectory(Credentials credentials, CrowdinApiParametersBuilder params) throws EmptyParameterException {
     ClientResponse response;
@@ -106,7 +106,7 @@ public class CrowdinApiClientImpl implements CrowdinApiClient{
     }
     return response;
   }
-  
+
   @Override
   public ClientResponse createProject(Credentials credentials, CrowdinApiParametersBuilder params) throws EmptyParameterException {
     ClientResponse response;
@@ -127,7 +127,7 @@ public class CrowdinApiClientImpl implements CrowdinApiClient{
     }
     return response;
   }
-  
+
   @Override
   public ClientResponse deleteDirectory(Credentials credentials, CrowdinApiParametersBuilder params) throws EmptyParameterException {
     ClientResponse response;
@@ -138,7 +138,7 @@ public class CrowdinApiClientImpl implements CrowdinApiClient{
     }
     return response;
   }
-  
+
   @Override
   public ClientResponse deleteFile(Credentials credentials, CrowdinApiParametersBuilder params) throws EmptyParameterException{
     ClientResponse response;
@@ -149,27 +149,27 @@ public class CrowdinApiClientImpl implements CrowdinApiClient{
     }
     return response;
   }
-  
+
   @Override
   public ClientResponse deleteProject(Credentials credentials, CrowdinApiParametersBuilder params) {
     return proccesing(credentials, params, CROWDIN_API_DELETE_PROJECT_URL, REQUEST_TYPE_GET);
   }
-  
+
   @Override
   public ClientResponse downloadGlossary(Credentials credentials, CrowdinApiParametersBuilder params) {
     return proccesing(credentials, params, CROWDIN_API_DOWNLOAD_GLOSSARY_URL, REQUEST_TYPE_GET);
   }
-  
+
   @Override
   public ClientResponse downloadTM(Credentials credentials, CrowdinApiParametersBuilder params) {
     return proccesing(credentials, params, CROWDIN_API_DOWNLOAD_TM_URL, REQUEST_TYPE_GET);
   }
-  
+
   @Override
   public ClientResponse downloadTranslations(Credentials credentials, CrowdinApiParametersBuilder params) {
     return proccesing(credentials, params, CROWDIN_API_DOWNLOAD_TRANSLATIONS_URL, REQUEST_TYPE_POST_DOWNLOAD);
   }
-  
+
   @Override
   public ClientResponse editProject(Credentials credentials, CrowdinApiParametersBuilder params) {
     String requestType;
@@ -180,7 +180,7 @@ public class CrowdinApiClientImpl implements CrowdinApiClient{
     }
     return proccesing(credentials, params, CROWDIN_API_EDIT_PROJECT_URL, requestType);
   }
-  
+
   @Override
   public ClientResponse exportFile(Credentials credentials, CrowdinApiParametersBuilder params) throws EmptyParameterException {
     ClientResponse response;
@@ -193,12 +193,12 @@ public class CrowdinApiClientImpl implements CrowdinApiClient{
     }
     return response;
   }
-  
+
   @Override
   public ClientResponse exportTranslations(Credentials credentials, CrowdinApiParametersBuilder params) {
     return proccesing(credentials, params, CROWDIN_API_EXPORT_TRANSLATIONS_URL, REQUEST_TYPE_GET);
   }
-  
+
   @Override
   public ClientResponse getAccountProject(Credentials credentials, CrowdinApiParametersBuilder params) throws EmptyParameterException {
     ClientResponse response;
@@ -209,7 +209,7 @@ public class CrowdinApiClientImpl implements CrowdinApiClient{
     }
     return response;
   }
-  
+
   @Override
   public ClientResponse getLanguageStatus(Credentials credentials, CrowdinApiParametersBuilder params) throws EmptyParameterException {
     ClientResponse response;
@@ -220,17 +220,17 @@ public class CrowdinApiClientImpl implements CrowdinApiClient{
     }
     return response;
   }
-  
+
   @Override
   public ClientResponse getInfo(Credentials credentials, CrowdinApiParametersBuilder params) {
     return proccesing(credentials, params, CROWDIN_API_PROJECT_INFO_URL, REQUEST_TYPE_GET);
   }
-  
+
   @Override
   public ClientResponse getSupportedLanguages(Credentials credentials, CrowdinApiParametersBuilder params) {
     return proccesing(credentials, params, CROWDIN_API_SUPPORTED_LANGUAGES_URL, REQUEST_TYPE_POST);
   }
-  
+
   @Override
   public ClientResponse getTranslationStatus(Credentials credentials, CrowdinApiParametersBuilder params) {
     return proccesing(credentials, params, CROWDIN_API_TRANSLATION_STATUS_URL, REQUEST_TYPE_POST);
@@ -244,19 +244,19 @@ public class CrowdinApiClientImpl implements CrowdinApiClient{
     } else if (parameters.getLanguages() == null || parameters.getLanguages().isEmpty()) {
       throw new EmptyParameterException("Parameters `LANGUAGES` can not be empty");
     } else {
-      response =  proccesing(credentials, parameters, CROWDIN_API_UPDATE_FILE_URL, REQUEST_TYPE_POST_UPLOAD);
+      response =  proccesing(credentials, parameters, CROWDIN_API_PRE_TRANSLATE_URL, REQUEST_TYPE_POST_UPLOAD);
     }
     return response;
   }
 
   @Override
   public ClientResponse pseudoDownload(Credentials credentials, CrowdinApiParametersBuilder parameters) {
-    return null;
+    return proccesing(credentials, parameters, CROWDIN_API_PSEUDO_DOWNLOAD_URL, REQUEST_TYPE_GET);
   }
 
   @Override
   public ClientResponse pseudoExport(Credentials credentials, CrowdinApiParametersBuilder parameters) {
-    return null;
+    return proccesing(credentials, parameters, CROWDIN_API_PSEUDO_EXPORT_URL, REQUEST_TYPE_GET);
   }
 
   @Override
@@ -269,7 +269,7 @@ public class CrowdinApiClientImpl implements CrowdinApiClient{
     }
     return response;
   }
-  
+
   @Override
   public ClientResponse uploadGlossary(Credentials credentials, CrowdinApiParametersBuilder params) throws EmptyParameterException {
     ClientResponse response;
@@ -280,7 +280,7 @@ public class CrowdinApiClientImpl implements CrowdinApiClient{
     }
     return response;
   }
-  
+
   @Override
   public ClientResponse uploadTM(Credentials credentials, CrowdinApiParametersBuilder params) throws EmptyParameterException {
     ClientResponse response;
@@ -291,7 +291,7 @@ public class CrowdinApiClientImpl implements CrowdinApiClient{
     }
     return response;
   }
-  
+
   @Override
   public ClientResponse uploadTranslations(Credentials credentials, CrowdinApiParametersBuilder params) throws EmptyParameterException {
     ClientResponse response;
@@ -304,7 +304,7 @@ public class CrowdinApiClientImpl implements CrowdinApiClient{
     }
     return response;
   }
-  
+
   /**
    *
    * @param credentials
@@ -323,7 +323,7 @@ public class CrowdinApiClientImpl implements CrowdinApiClient{
     }
     CrowdinApiParametersValidator parameters = new CrowdinApiParametersValidator();
     ClientResponse response = null;
-    
+
     try {
       if (requestType != null && REQUEST_TYPE_POST_UPLOAD.equalsIgnoreCase(requestType)) {
         response = request.post(url, parameters.validate(params), REQUEST_TYPE_POST_UPLOAD);
@@ -339,5 +339,5 @@ public class CrowdinApiClientImpl implements CrowdinApiClient{
     }
     return response;
   }
-  
+
 }
