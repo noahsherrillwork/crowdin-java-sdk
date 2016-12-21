@@ -96,9 +96,10 @@ System.out.println(crwdn.getInfo(credentials, parameters).getEntity(String.class
 Have a bug? Please create an issue here on [GitHub](https://github.com/crowdin/crowdin-java-sdk/issues)
 
 #### License and Author
-Ihor Popyk
+Ihor Popyk (ihor.popyk@crowdin.com)
+
 https://github.com/ihor-popyk
-ihor.popyk@crowdin.com
 
 Copyright: 2016 crowdin.com
+
 This project is licensed under the MIT license, a copy of which can be found in the LICENSE file.
