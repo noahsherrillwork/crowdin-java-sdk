@@ -64,6 +64,7 @@ public class HttpRequest {
     if (type != null && REQUEST_POST_EXPANDED_UPLOAD.equalsIgnoreCase(type)) {
       clientResponse = uploadFiles(parameters, url);
     } else if (type != null && REQUEST_POST_EXPANDED_DOWNLOAD.equalsIgnoreCase(type)) {
+      webResource = webResource.queryParams(parameters);
       clientResponse = webResource.post(ClientResponse.class);
       clientResponse = downloadFiles(parameters, clientResponse);
     } else {
