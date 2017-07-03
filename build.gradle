@@ -2,7 +2,7 @@ apply plugin: 'java'
 apply plugin:'application'
 apply plugin: 'eclipse'
 
-version = '1.0.1'
+version = '1.0.2'
 
 sourceCompatibility = '1.7'
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
