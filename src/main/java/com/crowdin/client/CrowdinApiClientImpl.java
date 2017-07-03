@@ -244,7 +244,7 @@ public class CrowdinApiClientImpl implements CrowdinApiClient{
     } else if (parameters.getLanguages() == null || parameters.getLanguages().isEmpty()) {
       throw new EmptyParameterException("Parameters `LANGUAGES` can not be empty");
     } else {
-      response =  proccesing(credentials, parameters, CROWDIN_API_PRE_TRANSLATE_URL, REQUEST_TYPE_POST_UPLOAD);
+      response =  proccesing(credentials, parameters, CROWDIN_API_PRE_TRANSLATE_URL, REQUEST_TYPE_POST);
     }
     return response;
   }
