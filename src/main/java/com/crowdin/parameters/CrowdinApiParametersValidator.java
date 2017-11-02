@@ -102,7 +102,7 @@ public class CrowdinApiParametersValidator {
     }
     
     if (parameters.getFile() != null) {
-      if (new File(parameters.getFile()).isFile()) {
+      if (new File(parameters.getFile()) != null) {
         params.add(CrowdinApiParameters.FILE, parameters.getFile());
       }
     }
